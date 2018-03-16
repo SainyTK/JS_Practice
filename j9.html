@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello World</title>
+</head>
+
+<body>
+	<h1 id="h">Heading</h1>
+	<p id="h">This is paragraph1</p>
+	<p>This is paragraph2</p>
+
+	<div>
+		<h2>This is h2</h2>
+	</div>
+
+	<button onclick='addItem()'>Click</button>
+
+	<ul id='ul'>
+		<li> list 1</li>
+		<li> list 2</li>
+	</ul>
+
+	
+</body>
+
+<script type="text/javascript">
+	var heading = document.getElementById('h');
+	console.log(heading);
+
+	var p = document.getElementsByTagName('p');
+	for(i in p)
+		console.log(p[i]);
+
+		p[0].innerHTML = "p1";
+
+	var li = document.getElementsByTagName('li');
+	for(i in li)
+		li[i].innerHTML = 'list ' + (Number(i)+1);
+
+	var ul = document.getElementById('ul');
+
+	var i = 1;
+
+	addItem = () => {
+		let newLi = document.createElement('li');
+		newLi.innerHTML = 'add new list ' + (Number(i));
+		ul.appendChild(newLi);
+		i++;
+	}
+
+</script>
+
+</html>
